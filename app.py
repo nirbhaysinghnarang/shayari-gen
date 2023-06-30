@@ -1,10 +1,10 @@
 from flask import Flask, request
  
-from shayari import Shayari
-from twilio.twiml.messaging_response import MessagingResponse
- 
- 
+from shayari import Shayari 
 app = Flask(__name__)
+@app.route("/", methods=["GET"])
+def template():
+    return "Shayari Generator - Nirbhay S Narang"
  
 @app.route("/", methods=["POST"])
 def generate():
